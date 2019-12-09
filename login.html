@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      NEWS - Login
+    </title>
+  </head>
+  <body>
+    <header>
+      <div id="signin">
+      <h1>Sign in to coding NEWS</h1>
+      <input type="text" id="username">
+      <br>
+      <input type="password" id="password">
+      <br>
+      <button id="login">Log In</button>
+      </div>
+      <div id="success" style="color: green; display: none">
+        Welcome!
+      </div>
+      <div id="wrong" style="color: red"></div>
+      <script>
+        document.getElementById("login").addEventListener("click", function(){
+          var user = document.getElementById("username").value;
+          var pass = document.getElementById("password").value;
+          if(user=="justin226"){
+            if(pass=="justinfu226"){
+              signin("justin226");
+              document.getElementById("correct").style.display = "block";
+            }
+            else{
+              document.getElementById("")
+            }
+          }
+        });
+      </script>
+    </header>
+  </body>
+</html>
