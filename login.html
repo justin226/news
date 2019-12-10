@@ -24,6 +24,18 @@
         document.getElementById("login").addEventListener("click", function(){
           var user = document.getElementById("username").value;
           var pass = document.getElementById("password").value;
+          if(getCookie("user") == "justin226"){
+            document.getElementById("correct").style.display = "block";
+              document.getElementById("correct").innerHTML = "Welcome, justin226!";
+              document.getElementById("signin").style.display = "none";
+              document.getElementById("logout").style.display = "block";
+          }
+          if(getCookie("user") == "user"){
+            document.getElementById("correct").style.display = "block";
+              document.getElementById("correct").innerHTML = "Welcome, user!";
+              document.getElementById("signin").style.display = "none";
+              document.getElementById("logout").style.display = "block";
+          }
           if(user=="justin226"){
             if(pass=="justinfu226"){
               signIn("justin226");
