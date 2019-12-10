@@ -38,6 +38,12 @@
       <p>"I farted.<br>It [tickled].<br>My butt[cheeks] giggled<br>It was hot it<br> was burning<br>so I did it<br>again"<br><em>-Gisselle Perez, 5th Grader</em><br>Monday December 9th, 2019</p>
     </div>
     <script>
+      if(getCookie("user") == "justin226"){
+        document.getElementById("lock").style.display = "none";
+    document.getElementById("game").style.display = "block";
+    document.getElementById("password").value = "";
+    document.getElementById("unlockable").innerHTML = "";
+      }
       if(getCookie("user") == "justin226"||getCookie("user") == "user"){
         document.getElementById("h").innerHTML = "Welcome, " + getCookie("user");
         document.getElementById("logout").style.display = "block";
