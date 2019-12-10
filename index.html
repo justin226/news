@@ -25,19 +25,27 @@
   </head>
   <body>
     <div id="lock">
-  Justin Fu has enforced a lock on this site to prevent unauthorized people snooping around in private news. Sign in to continue, or enter the password.
+  Justin Fu has enforced a lock on this site to prevent unauthorized people snooping around in private news. <a href="https://justin226.github.io/news/login">Sign in</a> to continue, or enter the password.
   <input type="password" id="password">
   <input type="submit" id="unlock" value="Submit">
   <span style="color: red" id="unlockable"></span>
 </div>
     <header id="h">
+      <button id="logout" style="display: none">
     </header>
     <h1>Private News</h1>
     <div id="game" class="section" style="display: none">
       <p>"I farted.<br>It [tickled].<br>My butt[cheeks] giggled<br>It was hot it<br> was burning<br>so I did it<br>again"<br><em>-Gisselle Perez, 5th Grader</em><br>Monday December 9th, 2019</p>
     </div>
     <script>
-      document.getElementById("h").innerHTML = "Welcome, " + getCookie("user");
+      if(getCookie("user") == "justin226"||getCookie("user") == "user"){
+        document.getElementById("h").innerHTML = "Welcome, " + getCookie("user");
+        document.getElementById("logout").style.display = "block";
+      }
+      document.getElementById("logout").addEventListener("click", function(){
+        document.cookie = "user=Somebody";
+        location.reload();
+      });
       checkLock();
 function getCookie(cname) {
   var name = cname + "=";
