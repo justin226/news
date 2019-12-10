@@ -1,8 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+    header {
+        background-color: lightyellow;
+        border-style: outset;
+      }
+      footer {
+          background-color: lightblue;
+          border-style: outset;
+      }
+      .section {
+        background-color: lightblue;
+        border-style: outset;
+      }
+      .part {
+        background-color: lightblue;
+        border-style: inset;
+      }
+    </style>
     <title>
       NEWS
     </title>
   </head>
+  <body>
+    <header id="h">
+    </header>
+    <div class="section">
+      <h1>Public News to All</h1>
+      <p>"I farted.<br>It [tickled].<br>My butt[cheeks] giggled<br>It was hot it<br> was burning<br>so I did it<br>again<br>-Gisselle Perez, 5th Grader</p>
+    </div>
+    <script>
+      document.getElementById("h").innerHTML = "Welcome, " + document.getCookie("user");
+      function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+    </script>
+  </body>
 </html>
