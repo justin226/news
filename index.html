@@ -24,15 +24,22 @@
     </title>
   </head>
   <body>
+    <div id="lock">
+  Justin Fu has enforced a lock on this site to prevent unauthorized people snooping around in private news. Sign in to continue.
+  <input type="password" id="password">
+  <input type="submit" id="unlock" value="Submit">
+  <span style="color: red" id="unlockable"></span>
+</div>
     <header id="h">
     </header>
-    <div class="section">
-      <h1>Public News to All</h1>
+    <h1>Private News</h1>
+    <div id="game" class="section" style="display: none">
       <p>"I farted.<br>It [tickled].<br>My butt[cheeks] giggled<br>It was hot it<br> was burning<br>so I did it<br>again"<br><em>-Gisselle Perez, 5th Grader</em><br>Monday December 9th, 2019</p>
     </div>
     <script>
-      document.getElementById("h").innerHTML = "Welcome, " + document.getCookie("user");
-      function getCookie(cname) {
+      document.getElementById("h").innerHTML = "Welcome, " + getCookie("user");
+      checkLock();
+function getCookie(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
@@ -46,6 +53,19 @@
     }
   }
   return "";
+}
+function checkLock(){
+  c = getCookie("user");
+  if(c !== "signout"){
+     document.getElementById("game").style.display = "none";
+     document.getElementById("lock").style.display = "block";
+  }
+  else{
+    document.getElementById("lock").style.display = "none";
+    document.getElementById("game").style.display = "block";
+    document.getElementById("password").value = "";
+    document.getElementById("unlockable").innerHTML = "";
+  }
 }
     </script>
   </body>
