@@ -25,7 +25,7 @@
   </head>
   <body>
     <div id="lock">
-  Justin Fu has enforced a lock on this site to prevent unauthorized people snooping around in private news. Sign in to continue.
+  Justin Fu has enforced a lock on this site to prevent unauthorized people snooping around in private news. Sign in to continue, or enter the password.
   <input type="password" id="password">
   <input type="submit" id="unlock" value="Submit">
   <span style="color: red" id="unlockable"></span>
@@ -56,7 +56,8 @@ function getCookie(cname) {
 }
 function checkLock(){
   c = getCookie("user");
-  if(c !== "signout"){
+  var m = getCookie("locked");
+  if(c !== "signout"||m !== "false"){
      document.getElementById("game").style.display = "none";
      document.getElementById("lock").style.display = "block";
   }
@@ -67,6 +68,18 @@ function checkLock(){
     document.getElementById("unlockable").innerHTML = "";
   }
 }
+document.getElementById("unlock").addEventListener("click", function(){
+  if(document.getElementById("password").value === "jFu090226"){
+    document.getElementById("game").style.display = "block";
+    document.getElementById("lock").style.display = "none";
+    document.cookie = "locked=false";
+    document.getElementById("password").value = "";
+    document.getElementById("unlockable").innerHTML = "";
+  }
+  else{
+    document.getElementById("unlockable").innerHTML = "Wrong";
+  }
+});
     </script>
   </body>
 </html>
