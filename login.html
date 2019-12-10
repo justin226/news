@@ -20,7 +20,17 @@
       </div>
       <button id="logout" style="display: none">Log Out</button>
       <div id="wrong" style="color: red"></div>
+      <br>
+      <a onclick="return check();" href="https://justin226.github.io/news">Return</a>
       <script>
+        function check(){
+          if(getCookie("user") == "justin226"||getCookie("user") == "user"){
+            return true;
+          }
+          else{
+            return prompt("You still have not signed in yet. Are you sure you want to leave?");
+          }
+        }
         if(getCookie("user") == "justin226"){
             document.getElementById("correct").style.display = "block";
               document.getElementById("correct").innerHTML = "Welcome, justin226!";
