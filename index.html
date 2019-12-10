@@ -57,15 +57,15 @@ function getCookie(cname) {
 function checkLock(){
   c = getCookie("user");
   var m = getCookie("locked");
-  if(c !== "justin226"||m !== "false"){
-     document.getElementById("game").style.display = "none";
-     document.getElementById("lock").style.display = "block";
-  }
-  else{
+  if(c == "justin226"||m == "false"){
     document.getElementById("lock").style.display = "none";
     document.getElementById("game").style.display = "block";
     document.getElementById("password").value = "";
     document.getElementById("unlockable").innerHTML = "";
+  }
+  else{
+    document.getElementById("game").style.display = "none";
+    document.getElementById("lock").style.display = "block";
   }
 }
 document.getElementById("unlock").addEventListener("click", function(){
