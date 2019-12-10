@@ -18,7 +18,7 @@
       <div id="correct" style="color: green; display: none">
         Welcome!
       </div>
-      <button id="logout" style="display: none">Sign Out</button>
+      <button id="logout" style="display: none">Log Out</button>
       <div id="wrong" style="color: red"></div>
       <script>
         document.getElementById("login").addEventListener("click", function(){
@@ -30,6 +30,7 @@
               document.getElementById("correct").style.display = "block";
               document.getElementById("correct").innerHTML = "Welcome, justin226!";
               document.getElementById("signin").style.display = "none";
+              document.getElementById("logout").style.display = "block";
             }
             else{
               document.getElementById("wrong").innerHTML = "Wrong password";
@@ -43,6 +44,7 @@
                 document.getElementById("correct").style.display = "block";
                 document.getElementById("correct").innerHTML = "Welcome, user!";
                 document.getElementById("singin").style.display = "none";
+                document.getElementById("logout").style.display = "block";
               }
             }
           }
@@ -51,6 +53,7 @@
           document.getElementById("correct").style.display = "none";
           document.getElementById("singin").style.display = "block";
           document.getElementById("wrong").style.display = "none";
+          document.getElementById("logout").style.display = "none";
           signOut();
         })
         function signIn(user){
